@@ -6,10 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="api-monitoring-viss" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="api-monitoring-viss" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>
