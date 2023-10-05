@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Computador {
 
-    private Integer id;
+    private Integer idComputadores;
     private String nomePatrimonio;
     private String marca;
     private String sistemaOperacional;
@@ -36,7 +36,6 @@ public class Computador {
 
             List<Computador> dadosComputador = computadorDao.selectInfoComputador(fkFuncionario, ipComputador);
             if(!dadosComputador.isEmpty()){
-                System.out.println(dadosComputador);
                 return dadosComputador.get(0);
             }
 
@@ -87,12 +86,12 @@ public class Computador {
 
 
 
-    public Integer getId() {
-        return id;
+    public Integer getIdComputadores() {
+        return idComputadores;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdComputadores(Integer idComputadores) {
+        this.idComputadores = idComputadores;
     }
 
     public String getNomePatrimonio() {
@@ -138,7 +137,7 @@ public class Computador {
     @Override
     public String toString() {
         return "Computador{" +
-                "id=" + id +
+                "idComputadores=" + idComputadores +
                 ", nomePatrimonio='" + nomePatrimonio + '\'' +
                 ", marca='" + marca + '\'' +
                 ", sistemaOperacional='" + sistemaOperacional + '\'' +

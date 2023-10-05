@@ -1,22 +1,60 @@
 package view.inc;
 
-import com.github.britooo.looca.api.core.Looca;
 import view.inc.model.Computador;
+import view.inc.model.Funcionario;
+
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
 
-        Computador computador = new Computador();
-        if(computador.recognizeMachine(1, computador.getIpMaquina()) != null){
-            computador = computador.recognizeMachine(1, computador.getIpMaquina());
-            System.out.println(computador.getId());
-        }else{
-            computador.registerMachine(1);
-        }
+        Scanner inputText = new Scanner(System.in);
+        Computador computadorOn;
+        Funcionario funcionarioOn;
+
+        Boolean logged = false;
+        do{
+
+            System.out.print("Email: ");
+            String email = inputText.next();
+
+            System.out.print("Senha: ");
+            String senha = inputText.next();
+
+            funcionarioOn = new Funcionario();
+            funcionarioOn = funcionarioOn.logar(email, senha);
+            logged = (funcionarioOn != null);
+
+            if(!logged){
+                System.out.println("Email ou Senha incorretos!");
+            }
+
+        }while(!logged);
 
 
+        /* Reconhecendo máquina */
+        Boolean recognized = false;
+        do{
+
+            computadorOn = new Computador();
+            Integer fkFuncionario = funcionarioOn.getIdFuncionario();
+            String ipComputador = computadorOn.getIpMaquina();
+
+            computadorOn = computadorOn.recognizeMachine(fkFuncionario, ipComputador);
+            if(computadorOn != null){
+                System.out.println(">> Bem-vindo!");
+                recognized = true;
+            }else{
+                System.out.println(">> Registrando máquina...");
+                computadorOn = new Computador();
+                computadorOn.registerMachine(fkFuncionario);
+            }
+
+        }while(!recognized);
 
 
+        System.out.println(computadorOn.getNomeMaquina());
+        System.out.println(funcionarioOn.getIdFuncionario() + "  " + funcionarioOn.getNome());
 
 
     }

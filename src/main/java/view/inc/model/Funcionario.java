@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Funcionario {
 
-    private Integer id;
+    private Integer idFuncionario;
     private String nome;
     private String telefone;
     private String email;
@@ -48,12 +48,12 @@ public class Funcionario {
 
 
     /* GETTERS E SETTERS */
-    public Integer getId() {
-        return id;
+    public Integer getIdFuncionario() {
+        return idFuncionario;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdFuncionario(Integer idFuncionario) {
+        this.idFuncionario = idFuncionario;
     }
 
     public String getNome() {
