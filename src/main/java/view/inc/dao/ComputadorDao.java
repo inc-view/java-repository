@@ -19,7 +19,7 @@ public class ComputadorDao {
     public List<Computador> selectInfoComputador(Integer fkFuncionario, String ipComputador){
 
         return this.connection.query(
-                "select * from computadores where fkFuncionario = ? and ipComputador = ? limit 1",
+                "select * from computador where fkFuncionario = ? and ipComputador = ? limit 1",
                 new BeanPropertyRowMapper<>(Computador.class), fkFuncionario, ipComputador
         );
 
@@ -27,7 +27,7 @@ public class ComputadorDao {
 
     public void insert(Computador computador){
         this.connection.update(
-                "insert into computadores(nomePatrimonio, marca, fkFuncionario, sistemaOperacional, ipComputador)" +
+                "insert into computador(nomePatrimonio, marca, fkFuncionario, sistemaOperacional, ipComputador)" +
                     "values (?, ?, ?, ?, ?)",
                 computador.getNomePatrimonio(), computador.getMarca(), computador.getFkFuncionario(),
                 computador.getSistemaOperacional(), computador.getIpComputador()

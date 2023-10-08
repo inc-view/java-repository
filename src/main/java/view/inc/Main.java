@@ -9,6 +9,7 @@ public class Main {
     public static void main(String[] args){
 
         Scanner inputText = new Scanner(System.in);
+        Scanner inputTextLong = new Scanner(System.in);
         Computador computadorOn;
         Funcionario funcionarioOn;
 
@@ -19,7 +20,7 @@ public class Main {
             String email = inputText.next();
 
             System.out.print("Senha: ");
-            String senha = inputText.next();
+            String senha = inputTextLong.nextLine();
 
             funcionarioOn = new Funcionario();
             funcionarioOn = funcionarioOn.logar(email, senha);
