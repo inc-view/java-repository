@@ -2,6 +2,7 @@ package view.inc;
 
 import view.inc.model.Computador;
 import view.inc.model.Funcionario;
+import view.inc.model.Processo;
 
 import java.util.Scanner;
 
@@ -57,6 +58,20 @@ public class Main {
         System.out.println(computadorOn.getNomeMaquina());
         System.out.println(funcionarioOn.getIdFuncionario() + "  " + funcionarioOn.getNome());
 
+        Scanner scannerOpcao = new Scanner(System.in);
+        Integer opcao;
+        String menu = """
+                MENU:
+                1 - Listar Processos
+                0 - Sair""";
+        do{
+            System.out.println(menu);
+            opcao = scannerOpcao.nextInt();
+            if(opcao == 1){
+                Processo p = new Processo();
+                p.getProcessos();
+            }
+        }while(opcao != 0);
 
     }
 }

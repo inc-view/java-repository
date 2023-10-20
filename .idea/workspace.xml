@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65c53a53-1774-4ccf-a7ed-b23515313ee4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/dao/ComputadorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/ComputadorDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/dao/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/inc/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/inc/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +42,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/MICRO/IdeaProjects/api-monitoring-viss",
+    "last_opened_file_path": "C:/Users/laris/Desktop/LP/Entrega/exercicio-para-praticar",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -51,6 +53,21 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="view.inc.dao" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="java-repository" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="java-repository" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
