@@ -2,13 +2,14 @@ package view.inc;
 
 import view.inc.model.Computador;
 import view.inc.model.Funcionario;
+import view.inc.model.Integracao;
 import view.inc.model.Processo;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
-
+/*
         Scanner inputText = new Scanner(System.in);
         Scanner inputTextLong = new Scanner(System.in);
         Computador computadorOn;
@@ -34,7 +35,7 @@ public class Main {
         }while(!logged);
 
 
-        /* Reconhecendo máquina */
+        *//* Reconhecendo máquina *//*
         Boolean recognized = false;
         do{
 
@@ -71,7 +72,8 @@ public class Main {
                 Processo p = new Processo();
                 p.getProcessos();
             }
-        }while(opcao != 0);
+        }while(opcao != 0);*/
 
+        Integracao integracao = new Integracao();
     }
 }
