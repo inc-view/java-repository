@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65c53a53-1774-4ccf-a7ed-b23515313ee4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/ProcessoIlicito.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/inc/ProcessoRowMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/dao/ComputadorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/ComputadorDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/dao/ProcessoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/ProcessoDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/Computador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/Computador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/Processo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/Processo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/ProcessoIlicito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/ProcessoIlicito.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/inc/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/inc/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -88,21 +88,22 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view/inc/dao/ProcessoDao.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src/main/java/view/inc/model/Processo.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view/inc/Main.java</url>
-          <line>85</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view/inc/dao/ProcessoDao.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/src/main/java/view/inc/model/ProcessoIlicito.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="todosProcessos" language="JAVA" />
+        <watch expression="processosIlicitos" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

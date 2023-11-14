@@ -5,6 +5,7 @@ import view.inc.dao.ComputadorDao;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Computador {
@@ -18,6 +19,8 @@ public class Computador {
     private String ipComputador;
 
     private ComputadorDao computadorDao = new ComputadorDao();
+
+    private List<Processo> processos = new ArrayList<>();
 
     public Computador(){};
 
@@ -93,10 +96,13 @@ public class Computador {
         computadorDao.insert(computador);
     }
 
+    public void adicionarProcesso(Processo processo){
+        this.processos.add(processo);
+    }
 
-
-
-
+    public List<Processo> getProcessos() {
+        return processos;
+    }
 
     public Integer getIdComputador() {
         return idComputador;

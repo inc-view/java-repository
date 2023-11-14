@@ -2,6 +2,7 @@ package view.inc.dao;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import view.inc.ProcessoRowMapper;
 import view.inc.model.Computador;
 import view.inc.model.Processo;
 import view.inc.model.ProcessoIlicito;
@@ -23,16 +24,25 @@ public class ProcessoDao {
         );
     }
 
-    public void insertIlicito(Processo processo){
-        this.connection.update("INSERT INTO processoIlicito (fkProcesso) VALUES ((SELECT idProcesso FROM Processo WHERE nomeProcesso LIKE '%?%'));",
-                processo.getNomeProcesso()
+    public void insertIlicito(ProcessoIlicito processo){
+        String pesquisa = "%" + processo.getNomeProcesso() + "%";
+        System.out.println(pesquisa);
+        this.connection.update("INSERT INTO processoIlicito (fkProcesso) VALUES ((SELECT idProcesso FROM Processo WHERE nomeProcesso LIKE ?));",
+                pesquisa
+        );
+    }
+
+    public void insertRegistroIlicito(Processo processo){
+        this.connection.update("CALL spInsertRegistroIlicito(?, ?);",
+                processo.getNomeProcesso(),
+                processo.getIdComputador()
         );
     }
 
     public List<ProcessoIlicito> selectAllProcessosIlicitos(Integer computador){
         return this.connection.query("SELECT * FROM processoIlicito as procIli JOIN\n" +
                         "\tprocesso AS p ON procIli.fkProcesso = p.idProcesso AND p.fkComputador = ?;",
-                new BeanPropertyRowMapper<>(ProcessoIlicito.class), computador);
+                new ProcessoRowMapper(), computador);
     }
 
     public List<Processo> getProcessosLista(Integer computador){

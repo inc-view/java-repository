@@ -1,7 +1,6 @@
 package view.inc.model;
 
 import com.github.britooo.looca.api.core.Looca;
-import view.inc.dao.ComputadorDao;
 import view.inc.dao.ProcessoDao;
 
 import java.util.ArrayList;
@@ -15,7 +14,7 @@ public class Processo{
 
 
     private ProcessoDao processoDao = new ProcessoDao();
-    private List<Processo> processos;
+    private List<Processo> processos = new ArrayList<>();
 
    private  Looca looca = new Looca();
 
@@ -25,7 +24,6 @@ public class Processo{
         this.nomeProcesso = nomeProcesso;
         this.computador = new Computador().recognizeMachine(fkFuncionario, ipComputador);
         this.usoCPU = usoCPU;
-        this.processos = new ArrayList<>();
     }
     public Processo(Integer idProcesso, String nomeProcesso, Integer fkFuncionario, String ipComputador) {
         this.idProcesso = idProcesso;
@@ -52,13 +50,20 @@ public class Processo{
         }
     }
 
-    public void cadastrarProcesso(Integer fkFuncionario, String ipComputador){
+
+    public void cadastrarProcesso(Integer fkFuncionario, Computador computador){
         List<com.github.britooo.looca.api.group.processos.Processo> processos = looca.getGrupoDeProcessos().getProcessos();
         for (com.github.britooo.looca.api.group.processos.Processo processo : processos) {
             Integer PID = processo.getPid();
             String nomeProcesso = processo.getNome();
-            Processo p = new Processo(PID, nomeProcesso,fkFuncionario, ipComputador);
-                    processoDao.insert(p);
+            Processo p = new Processo(PID, nomeProcesso,fkFuncionario, computador.getIpComputador());
+            for (Processo computadorProcesso : computador.getProcessos()) {
+                if (!computadorProcesso.getNomeProcesso().equalsIgnoreCase(p.getNomeProcesso())) {
+                    computador.adicionarProcesso(p);
+                }
+            }
+            processoDao.insert(p);
+            this.processos.add(p);
         }
 
     }

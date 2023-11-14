@@ -71,19 +71,20 @@ public class Main {
                 """;
         do{
             Integer fkFuncionario = funcionarioOn.getIdFuncionario();
-            String ipComputador = computadorOn.getIpMaquina();
             System.out.println(menu);
             opcao = scannerOpcao.nextInt();
             if(opcao == 1){
-                processo.cadastrarProcesso(fkFuncionario, ipComputador);
+                processo.cadastrarProcesso(fkFuncionario, computadorOn);
                 Looca looca = new Looca();
 
-                for (com.github.britooo.looca.api.group.processos.Processo processo1 : looca.getGrupoDeProcessos().getProcessos()) {
-                    System.out.println(processo1.getNome());
-                }
+//                for (com.github.britooo.looca.api.group.processos.Processo processo1 : looca.getGrupoDeProcessos().getProcessos()) {
+//                    System.out.println(processo1.getNome());
+//                }
+                System.out.println(processo.getAllProcessos());
+
             } else if (opcao == 2) {
                 ProcessoIlicito ilicito = new ProcessoIlicito();
-                System.out.println(ilicito.getProcessosIlicitos(computadorOn).toString());
+                ilicito.getProcessosIlicitos(computadorOn);
             }
         }while(opcao != 0);
 
