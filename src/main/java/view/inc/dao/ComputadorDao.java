@@ -27,10 +27,13 @@ public class ComputadorDao {
 
     public void insert(Computador computador){
         this.connection.update(
-                "insert into computador(nomePatrimonio, marca, fkFuncionario, sistemaOperacional, ipComputador)" +
-                    "values (?, ?, ?, ?, ?)",
+                "INSERT INTO computador (nomePatrimonio, marca, fkFuncionario, sistemaOperacional, ipComputador)\n" +
+                        "SELECT * FROM (SELECT ?, ?, ?, ?, ?) AS tmp\n" +
+                        "WHERE NOT EXISTS (\n" +
+                        "    SELECT nomePatrimonio FROM computador WHERE nomePatrimonio = ?\n" +
+                        ") LIMIT 1;",
                 computador.getNomePatrimonio(), computador.getMarca(), computador.getFkFuncionario(),
-                computador.getSistemaOperacional(), computador.getIpComputador()
+                computador.getSistemaOperacional(), computador.getIpComputador(), computador.getNomePatrimonio()
         );
     }
 

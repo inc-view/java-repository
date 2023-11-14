@@ -1,8 +1,10 @@
 package view.inc;
 
+import com.github.britooo.looca.api.core.Looca;
 import view.inc.model.Computador;
 import view.inc.model.Funcionario;
 import view.inc.model.Processo;
+import view.inc.model.ProcessoIlicito;
 
 import java.util.Scanner;
 
@@ -60,16 +62,28 @@ public class Main {
 
         Scanner scannerOpcao = new Scanner(System.in);
         Integer opcao;
+        Processo processo = new Processo();
         String menu = """
                 MENU:
-                1 - Listar Processos
-                0 - Sair""";
+                1 - Listar Processo
+                2 - Listar Processos Ilicitos
+                0 - Sair
+                """;
         do{
+            Integer fkFuncionario = funcionarioOn.getIdFuncionario();
+            String ipComputador = computadorOn.getIpMaquina();
             System.out.println(menu);
             opcao = scannerOpcao.nextInt();
             if(opcao == 1){
-                Processo p = new Processo();
-                p.getProcessos();
+                processo.cadastrarProcesso(fkFuncionario, ipComputador);
+                Looca looca = new Looca();
+
+                for (com.github.britooo.looca.api.group.processos.Processo processo1 : looca.getGrupoDeProcessos().getProcessos()) {
+                    System.out.println(processo1.getNome());
+                }
+            } else if (opcao == 2) {
+                ProcessoIlicito ilicito = new ProcessoIlicito();
+                System.out.println(ilicito.getProcessosIlicitos(computadorOn).toString());
             }
         }while(opcao != 0);
 

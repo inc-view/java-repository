@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Computador {
 
-    private Integer idComputadores;
+    private Integer idComputador;
     private String nomePatrimonio;
     private String marca;
     private String sistemaOperacional;
@@ -33,10 +33,22 @@ public class Computador {
     public Computador recognizeMachine(Integer fkFuncionario, String ipComputador){
 
         if(fkFuncionario != null && fkFuncionario > 0 && !ipComputador.isEmpty()){
-
             List<Computador> dadosComputador = computadorDao.selectInfoComputador(fkFuncionario, ipComputador);
             if(!dadosComputador.isEmpty()){
                 return dadosComputador.get(0);
+            }
+
+        }
+        return null;
+
+    }
+
+    public Integer recognizeIdMachine(Integer fkFuncionario, String ipComputador){
+
+        if(fkFuncionario != null && fkFuncionario > 0 && !ipComputador.isEmpty()){
+            List<Computador> dadosComputador = computadorDao.selectInfoComputador(fkFuncionario, ipComputador);
+            if(!dadosComputador.isEmpty()){
+                return dadosComputador.get(0).getIdComputador();
             }
 
         }
@@ -86,12 +98,12 @@ public class Computador {
 
 
 
-    public Integer getIdComputadores() {
-        return idComputadores;
+    public Integer getIdComputador() {
+        return idComputador;
     }
 
-    public void setIdComputadores(Integer idComputadores) {
-        this.idComputadores = idComputadores;
+    public void setIdComputador(Integer idComputador) {
+        this.idComputador = idComputador;
     }
 
     public String getNomePatrimonio() {
@@ -137,7 +149,7 @@ public class Computador {
     @Override
     public String toString() {
         return "Computador{" +
-                "idComputadores=" + idComputadores +
+                "idComputador=" + idComputador +
                 ", nomePatrimonio='" + nomePatrimonio + '\'' +
                 ", marca='" + marca + '\'' +
                 ", sistemaOperacional='" + sistemaOperacional + '\'' +
