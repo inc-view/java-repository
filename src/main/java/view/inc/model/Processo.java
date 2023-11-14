@@ -5,6 +5,7 @@ import view.inc.dao.ProcessoDao;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Processo{
     private Integer idProcesso;
@@ -65,6 +66,23 @@ public class Processo{
             processoDao.insert(p);
             this.processos.add(p);
         }
+
+    }
+
+    //TESTAR AQUI
+    public void adicionaIlicito(Integer idComputador){
+        System.out.println(getAllProcessos());
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Insira o nome do processo que deseja bloquear: ");
+        String nome = scanner.nextLine().toLowerCase();
+        for (Processo proc : getAllProcessos()) {
+            String nomeProcesso = proc.getNomeProcesso().toLowerCase();
+            if(nomeProcesso.equals(nome)){
+                ProcessoIlicito novoProcessoIlicito = new ProcessoIlicito(proc.getIdProcesso(), nomeProcesso);
+                novoProcessoIlicito.cadastrarProcesso(novoProcessoIlicito, idComputador);
+            }
+        }
+
 
     }
 

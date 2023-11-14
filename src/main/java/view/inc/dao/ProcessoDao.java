@@ -24,19 +24,18 @@ public class ProcessoDao {
         );
     }
 
-    public void insertIlicito(ProcessoIlicito processo){
-        String pesquisa = "%" + processo.getNomeProcesso() + "%";
-        System.out.println(pesquisa);
-        this.connection.update("INSERT INTO processoIlicito (fkProcesso) VALUES ((SELECT idProcesso FROM Processo WHERE nomeProcesso LIKE ?));",
-                pesquisa
+    public void insertIlicito(ProcessoIlicito processo, Integer codMaquina){
+        this.connection.update("CALL spInsertProcessoIlicito(?, ?);",
+                processo.getNomeProcesso(),
+                codMaquina
         );
     }
 
-    public void insertRegistroIlicito(Processo processo){
+    public void insertRegistroIlicito(Processo processo, Integer cod){
         this.connection.update("CALL spInsertRegistroIlicito(?, ?);",
                 processo.getNomeProcesso(),
-                processo.getIdComputador()
-        );
+                cod
+                        );
     }
 
     public List<ProcessoIlicito> selectAllProcessosIlicitos(Integer computador){

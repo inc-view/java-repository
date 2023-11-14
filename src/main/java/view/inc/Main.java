@@ -67,24 +67,23 @@ public class Main {
                 MENU:
                 1 - Listar Processo
                 2 - Listar Processos Ilicitos
+                3 - Adicionar Ilicito para essa máquina
                 0 - Sair
                 """;
         do{
             Integer fkFuncionario = funcionarioOn.getIdFuncionario();
             System.out.println(menu);
             opcao = scannerOpcao.nextInt();
+            ProcessoIlicito ilicito = new ProcessoIlicito();
             if(opcao == 1){
                 processo.cadastrarProcesso(fkFuncionario, computadorOn);
-                Looca looca = new Looca();
 
-//                for (com.github.britooo.looca.api.group.processos.Processo processo1 : looca.getGrupoDeProcessos().getProcessos()) {
-//                    System.out.println(processo1.getNome());
-//                }
                 System.out.println(processo.getAllProcessos());
 
             } else if (opcao == 2) {
-                ProcessoIlicito ilicito = new ProcessoIlicito();
                 ilicito.getProcessosIlicitos(computadorOn);
+            }else if(opcao == 3){
+                processo.adicionaIlicito(computadorOn.getIdComputador());
             }
         }while(opcao != 0);
 

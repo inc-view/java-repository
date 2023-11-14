@@ -30,9 +30,10 @@ public class ProcessoIlicito{
     public void cadastrarProcesso(ProcessoIlicito processoIlicito, Integer computador) {
         List<ProcessoIlicito> todosProcessos = processoDao.selectAllProcessosIlicitos(computador);
             for (ProcessoIlicito todosProcesso : todosProcessos) {
-                //processoDao.insertIlicito(processoIlicito);
+                processoDao.insertIlicito(processoIlicito, computador);
                 this.processosIlicitos.add(processoIlicito);
         }
+        processoDao.insertIlicito(processoIlicito, computador);
     }
 
     public void getProcessosIlicitos(Computador computador) {
