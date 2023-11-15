@@ -1,10 +1,7 @@
 package view.inc;
 
 import com.github.britooo.looca.api.core.Looca;
-import view.inc.model.Computador;
-import view.inc.model.Funcionario;
-import view.inc.model.Processo;
-import view.inc.model.ProcessoIlicito;
+import view.inc.model.*;
 
 import java.util.Scanner;
 
@@ -57,10 +54,7 @@ public class Main {
         }while(!recognized);
 
 
-        System.out.println(computadorOn.getNomeMaquina());
-        System.out.println(funcionarioOn.getIdFuncionario() + "  " + funcionarioOn.getNome());
-
-        Scanner scannerOpcao = new Scanner(System.in);
+        /*Scanner scannerOpcao = new Scanner(System.in);
         Integer opcao;
         Processo processo = new Processo();
         String menu = """
@@ -69,6 +63,7 @@ public class Main {
                 2 - Listar Processos Ilicitos
                 0 - Sair
                 """;
+
         do{
             Integer fkFuncionario = funcionarioOn.getIdFuncionario();
             String ipComputador = computadorOn.getIpMaquina();
@@ -85,7 +80,20 @@ public class Main {
                 ProcessoIlicito ilicito = new ProcessoIlicito();
                 System.out.println(ilicito.getProcessosIlicitos(computadorOn).toString());
             }
-        }while(opcao != 0);
+        }while(opcao != 0);*/
+
+        Janela janelas = new Janela();
+        Integer qtdeTotalProgramas = janelas.getQuantidadeJanelas();
+        while(true){
+
+            janelas.getJanelas();
+            if(janelas.getQuantidadeJanelas() != qtdeTotalProgramas){
+                qtdeTotalProgramas = janelas.getQuantidadeJanelas();
+                janelas.insertJanelas(computadorOn.getIdComputador());
+                janelas.showJanelas();
+            }
+
+        }
 
     }
 }
