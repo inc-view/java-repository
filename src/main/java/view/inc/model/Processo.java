@@ -51,8 +51,13 @@ public class Processo{
         }
     }
 
+<<<<<<< HEAD
 
     public void cadastrarProcesso(Integer fkFuncionario, Computador computador){
+=======
+    public void cadastrarProcesso(Integer fkFuncionario, String ipComputador){
+
+>>>>>>> 82d2a86c58b8c12cd40571b69a50c53e6b07ad64
         List<com.github.britooo.looca.api.group.processos.Processo> processos = looca.getGrupoDeProcessos().getProcessos();
         for (com.github.britooo.looca.api.group.processos.Processo processo : processos) {
             Integer PID = processo.getPid();

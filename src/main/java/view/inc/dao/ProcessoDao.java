@@ -24,10 +24,28 @@ public class ProcessoDao {
         );
     }
 
+<<<<<<< HEAD
     public void insertIlicito(ProcessoIlicito processo, Integer codMaquina){
         this.connection.update("CALL spInsertProcessoIlicito(?, ?);",
                 processo.getNomeProcesso(),
                 codMaquina
+=======
+    public void insertPrograma(String nomePrograma, Integer idComputador){
+        this.connection.update("CALL spInsertProcesso(?, ?)",
+                nomePrograma, idComputador
+        );
+    }
+
+    public void insertRegistro(String nome, Integer fkComputador, Double registro){
+        this.connection.update("CALL spInsertRegistroProcesso(?, ?, ?)",
+                nome, fkComputador, registro
+        );
+    }
+
+    public void insertIlicito(Processo processo){
+        this.connection.update("INSERT INTO processoIlicito (fkProcesso) VALUES ((SELECT idProcesso FROM Processo WHERE nomeProcesso LIKE '%?%'));",
+                processo.getNomeProcesso()
+>>>>>>> 82d2a86c58b8c12cd40571b69a50c53e6b07ad64
         );
     }
 
