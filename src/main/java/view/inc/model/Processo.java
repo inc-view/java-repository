@@ -52,18 +52,6 @@ public class Processo{
         }
     }
 
-    public void cadastrarProcesso(Integer fkFuncionario, String ipComputador){
-
-        List<com.github.britooo.looca.api.group.processos.Processo> processos = looca.getGrupoDeProcessos().getProcessos();
-        for (com.github.britooo.looca.api.group.processos.Processo processo : processos) {
-            Integer PID = processo.getPid();
-            String nomeProcesso = processo.getNome();
-            Processo p = new Processo(PID, nomeProcesso,fkFuncionario, ipComputador);
-            processoDao.insert(p);
-        }
-
-    }
-
 
     public Integer getIdMaquina(Integer fkFuncionario, String ipComputador){
         Computador computador1 = new Computador();

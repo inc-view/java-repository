@@ -4,6 +4,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import view.inc.ProcessoRowMapper;
 import view.inc.model.Computador;
+import view.inc.model.Janela;
 import view.inc.model.Processo;
 import view.inc.model.ProcessoIlicito;
 
@@ -42,13 +43,8 @@ public class ProcessoDao {
         );
     }
 
-    public void insertIlicito(Processo processo){
-        this.connection.update("INSERT INTO processoIlicito (fkProcesso) VALUES ((SELECT idProcesso FROM Processo WHERE nomeProcesso LIKE '%?%'));",
-                processo.getNomeProcesso()
-        );
-    }
 
-    public void insertRegistroIlicito(Processo processo, Integer cod){
+    public void insertRegistroIlicito(ProcessoIlicito processo, Integer cod){
         this.connection.update("CALL spInsertRegistroIlicito(?, ?);",
                 processo.getNomeProcesso(),
                 cod
@@ -56,8 +52,8 @@ public class ProcessoDao {
     }
 
     public List<ProcessoIlicito> selectAllProcessosIlicitos(Integer computador){
-        return this.connection.query("SELECT * FROM processoIlicito as procIli JOIN\n" +
-                        "\tprocesso AS p ON procIli.fkProcesso = p.idProcesso AND p.fkComputador = ?;",
+        return this.connection.query("SELECT * FROM software AS s" +
+                        " JOIN softwarePermitido AS sp ON s.idSoftware = sp.fkSoftware WHERE fkComputador = ?;",
                 new ProcessoRowMapper(), computador);
     }
 

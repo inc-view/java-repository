@@ -24,9 +24,6 @@ public class ExibeProcIlicitosTask extends TimerTask {
     }
     @Override
     public void run() {
-        processo.cadastrarProcesso(fkFuncionario, computador.getIpComputador());
-        processo.getAllProcessos();
-        processoIlicito.getProcessosIlicitos(this.computador);
         try {
             processoIlicito.checkProcessosIlicitos(computador);
         } catch (Exception e) {
