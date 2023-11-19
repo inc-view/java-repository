@@ -35,7 +35,18 @@ public class Janela {
             if(!janelaAtual.getTitulo().isEmpty()){
                 int pid = janelaAtual.getPid().intValue();
                 processoDao.insertPrograma(janelaAtual.getTitulo(), idComputador);
-                processoDao.insertRegistro(janelaAtual.getTitulo(), idComputador, processoComputador.getProcessCPU(pid));
+            }
+        }
+    }
+
+    public void insertRegistroJanela(Integer idComputador){
+        for (com.github.britooo.looca.api.group.janelas.Janela janelaAtual : janelas){
+            if(!janelaAtual.getTitulo().isEmpty()){
+                int pid = janelaAtual.getPid().intValue();
+                processoDao.insertRegistro(
+                        janelaAtual.getTitulo(), idComputador,
+                        processoComputador.getProcessCPU(pid), processoComputador.getProcessRAM(pid)
+                );
             }
         }
     }

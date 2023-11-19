@@ -29,9 +29,9 @@ public class ProcessoDao {
         );
     }
 
-    public void insertRegistro(String nome, Integer fkComputador, Double registro){
-        this.connection.update("CALL spInsertRegistroProcesso(?, ?, ?)",
-                nome, fkComputador, registro
+    public void insertRegistro(String nome, Integer fkComputador, Double registroCPU, Double registroRAM){
+        this.connection.update("CALL spInsertRegistroProcesso(?, ?, ?, ?)",
+                nome, fkComputador, registroCPU, registroRAM
         );
     }
 
