@@ -1,9 +1,15 @@
 package view.inc;
 
 import com.github.britooo.looca.api.core.Looca;
+import org.h2.command.dml.Insert;
 import view.inc.model.*;
+import view.inc.tasks.ExibeProcIlicitosTask;
+import view.inc.tasks.InsertRegistroJanelaTasks;
+import view.inc.tasks.JanelaInsertTask;
+import view.inc.tasks.UpdateListJanelaTask;
 
 import java.util.Scanner;
+import java.util.Timer;
 
 public class Main {
     public static void main(String[] args){
@@ -54,46 +60,22 @@ public class Main {
         }while(!recognized);
 
 
-        /*Scanner scannerOpcao = new Scanner(System.in);
-        Integer opcao;
-        Processo processo = new Processo();
-        String menu = """
-                MENU:
-                1 - Listar Processo
-                2 - Listar Processos Ilicitos
-                3 - Adicionar Ilicito para essa máquina
-                0 - Sair
-                """;
 
-        do{
-            Integer fkFuncionario = funcionarioOn.getIdFuncionario();
-            System.out.println(menu);
-            opcao = scannerOpcao.nextInt();
-            ProcessoIlicito ilicito = new ProcessoIlicito();
-            if(opcao == 1){
-                processo.cadastrarProcesso(fkFuncionario, computadorOn);
-
-                System.out.println(processo.getAllProcessos());
-
-            } else if (opcao == 2) {
-                ilicito.getProcessosIlicitos(computadorOn);
-            }else if(opcao == 3){
-                processo.adicionaIlicito(computadorOn.getIdComputador());
-            }
-        }while(opcao != 0);*/
-
+        Timer agendador = new Timer();
         Janela janelas = new Janela();
-        Integer qtdeTotalProgramas = janelas.getQuantidadeJanelas();
-        while(true){
 
-            janelas.getJanelas();
-            if(janelas.getQuantidadeJanelas() != qtdeTotalProgramas){
-                qtdeTotalProgramas = janelas.getQuantidadeJanelas();
-                janelas.insertJanelas(computadorOn.getIdComputador());
-                janelas.showJanelas();
-            }
+        InsertRegistroJanelaTasks tarefaInsertRegistrojanela = new InsertRegistroJanelaTasks(janelas, computadorOn);
+        agendador.schedule(tarefaInsertRegistrojanela, 10000, 5000);
 
-        }
+        UpdateListJanelaTask tarefaUpdateList = new UpdateListJanelaTask(janelas);
+        agendador.schedule(tarefaUpdateList, 0, 9000);
+
+        JanelaInsertTask tarefaInsertJanela = new JanelaInsertTask(janelas, computadorOn);
+        agendador.schedule(tarefaInsertJanela, 0, 10000);
+
+        ExibeProcIlicitosTask exibir = new ExibeProcIlicitosTask(computadorOn, funcionarioOn.getIdFuncionario(), 0, 10000);
+        agendador.schedule(exibir, exibir.getDelay(), exibir.getPeriodo());
+
 
     }
 }

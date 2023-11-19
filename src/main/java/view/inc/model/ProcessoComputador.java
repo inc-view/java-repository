@@ -39,7 +39,7 @@ public class ProcessoComputador {
     public Double getProcessCPU(int pid){
         for(com.github.britooo.looca.api.group.processos.Processo processoAtual : processos){
             if(processoAtual.getPid().equals(pid)){
-                return (double) Math.round(processoAtual.getUsoCpu());
+                return processoAtual.getUsoCpu();
             }
         }
         return null;
@@ -59,7 +59,7 @@ public class ProcessoComputador {
     public void killProcess(int pid) throws IOException {
         Runtime rt = Runtime.getRuntime();
         if (System.getProperty("os.name").toLowerCase().indexOf("windows") > -1) {
-            rt.exec("tskill " + pid);
+            rt.exec("taskkill /PID " + pid);
         }else{
             rt.exec("kill -9 " + pid);
         }

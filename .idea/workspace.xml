@@ -5,14 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65c53a53-1774-4ccf-a7ed-b23515313ee4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/Janela.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/ProcessoComputador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/inc/tasks/ExibeProcIlicitosTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/inc/tasks/InsertRegistroJanelaTasks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/inc/tasks/JanelaInsertTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/inc/tasks/UpdateListJanelaTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/dao/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/Connection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/dao/ProcessoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/ProcessoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/Janela.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/Janela.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/Processo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/Processo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/ProcessoComputador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/ProcessoComputador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/ProcessoIlicito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/ProcessoIlicito.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/inc/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/inc/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,114 +45,58 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
-}</component>
+    &quot;associatedIndex&quot;: 5
+    }</component>
   <component name="ProjectId" id="2VmMXwZBUuFFsOUm1ArQm1Bfbsq" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;larissa&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/laris/Desktop/inc-view/java-repository&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;
-=======
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "alterando-java",
-    "last_opened_file_path": "C:/Users/MICRO/Desktop/java-repository",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.general"
->>>>>>> 82d2a86c58b8c12cd40571b69a50c53e6b07ad64
+    "git-widget-placeholder": "Merging larissa",
+    "last_opened_file_path": "C:/Users/laris/Desktop/inc-view/java-repository - Copia",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="view.inc.dao" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="java-repository" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="java-repository" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="65c53a53-1774-4ccf-a7ed-b23515313ee4" name="Changes" comment="" />
-      <created>1695436845756</created>
+      <changelist id="5ea1e64e-0c50-4461-8049-f94ba2b0b6d8" name="Changes" comment="" />
+      <created>1700353515714</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1695436845756</updated>
+      <updated>1700353515714</updated>
     </task>
     <servers />
   </component>
-<<<<<<< HEAD
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.io.IOException" package="java.io" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.jdbc.BadSqlGrammarException" package="org.springframework.jdbc" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view/inc/model/Processo.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="17" />
+          <url>file://$PROJECT_DIR$/src/main/java/view/inc/model/ProcessoIlicito.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/view/inc/model/ProcessoIlicito.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="18" />
+          <line>66</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="todosProcessos" language="JAVA" />
-        <watch expression="processosIlicitos" language="JAVA" />
-      </configuration>
-    </watches-manager>
-=======
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="alterando-java" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
->>>>>>> 82d2a86c58b8c12cd40571b69a50c53e6b07ad64
   </component>
 </project>

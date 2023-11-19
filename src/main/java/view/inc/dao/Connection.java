@@ -11,7 +11,7 @@ public class Connection {
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/inkView");
         dataSource.setUsername("root");
-        dataSource.setPassword("@eduufreire");
+        dataSource.setPassword("1234567");
 
         connection = new JdbcTemplate(dataSource);
     }

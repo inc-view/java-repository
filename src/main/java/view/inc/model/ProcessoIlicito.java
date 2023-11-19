@@ -1,7 +1,11 @@
 package view.inc.model;
 
+import com.github.britooo.looca.api.core.Looca;
+import com.github.britooo.looca.api.group.processos.Processo;
 import view.inc.dao.ProcessoDao;
 
+import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +13,9 @@ public class ProcessoIlicito{
     private int idProcessoIlicito;
     private int fkProcesso;
     private String nomeProcesso;
+    private LocalDateTime dataHora;
+
+
     private List<ProcessoIlicito> processosIlicitos = new ArrayList<>();
     private ProcessoDao processoDao = new ProcessoDao();
 
@@ -36,16 +43,37 @@ public class ProcessoIlicito{
         processoDao.insertIlicito(processoIlicito, computador);
     }
 
-    public void getProcessosIlicitos(Computador computador) {
+    public List<ProcessoIlicito> getProcessosIlicitos(Computador computador) {
         List<ProcessoIlicito> processosIlicitos = processoDao.selectAllProcessosIlicitos(computador.getIdComputador());
         for (ProcessoIlicito procEncontrado : processosIlicitos) {
             this.processosIlicitos.add(procEncontrado);
-            System.out.println(procEncontrado.toString());
             procEncontrado.cadastrarProcesso(procEncontrado, computador.getIdComputador());
         }
-
-
+        return this.processosIlicitos;
     }
+
+    public void checkProcessosIlicitos(Computador computador) throws IOException {
+        Looca looca = new Looca();
+        List<com.github.britooo.looca.api.group.processos.Processo> processosMaquina = looca.getGrupoDeProcessos().getProcessos();
+        List<ProcessoIlicito> processoIlicitos = processoDao.selectAllProcessosIlicitos(computador.getIdComputador());
+        ProcessoComputador matarProc = new ProcessoComputador();
+        for(com.github.britooo.looca.api.group.processos.Processo processoLooca : processosMaquina){
+            for (int i = 0; i < processoIlicitos.size(); i++) {
+                String nomeProcesso = processoLooca.getNome().toLowerCase();
+                String nomeIlicito = processoIlicitos.get(i).getNomeProcesso().toLowerCase();
+                if(nomeProcesso.contains(nomeIlicito)){
+                    int pid = processoLooca.getPid().intValue();
+                    //adicionar aqui o registro de processo ilicito com data e hora da ocorrencia
+
+                    //aqui pede pra matar aquele processo
+                    matarProc.killProcess(pid);
+                }
+            }
+        }
+        System.out.println("Matei todos os processos ilícitos");
+    }
+
+
 
 
 
@@ -96,5 +124,13 @@ public class ProcessoIlicito{
 
     public void setProcessoDao(ProcessoDao processoDao) {
         this.processoDao = processoDao;
+    }
+
+    public LocalDateTime getDataHora() {
+        return dataHora;
+    }
+
+    public void setDataHora(LocalDateTime dataHora) {
+        this.dataHora = dataHora;
     }
 }
