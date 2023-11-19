@@ -53,7 +53,7 @@ public class ProcessoIlicito{
                 if(nomeProcesso.contains(nomeIlicito)){
                     int pid = janela1.getPid().intValue();
                     //adicionar aqui o registro de processo ilicito com data e hora da ocorrencia
-                    processoDao.insertRegistroIlicito(processoIlicitos.get(i), computador.getIdComputador());
+                    processoDao.insertRegistroIlicito(nomeProcesso, computador.getIdComputador());
                     //aqui pede pra matar aquele processo
                     matarProc.killProcess(pid);
                 }

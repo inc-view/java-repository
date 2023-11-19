@@ -64,8 +64,8 @@ public class Main {
         Timer agendador = new Timer();
         Janela janelas = new Janela();
 
-//        InsertRegistroJanelaTasks tarefaInsertRegistrojanela = new InsertRegistroJanelaTasks(janelas, computadorOn);
-//        agendador.schedule(tarefaInsertRegistrojanela, 10000, 5000);
+        InsertRegistroJanelaTasks tarefaInsertRegistrojanela = new InsertRegistroJanelaTasks(janelas, computadorOn);
+        agendador.schedule(tarefaInsertRegistrojanela, 10000, 5000);
 
         UpdateListJanelaTask tarefaUpdateList = new UpdateListJanelaTask(janelas);
         agendador.schedule(tarefaUpdateList, 0, 9000);
@@ -73,7 +73,7 @@ public class Main {
         JanelaInsertTask tarefaInsertJanela = new JanelaInsertTask(janelas, computadorOn);
         agendador.schedule(tarefaInsertJanela, 0, 10000);
 
-        ExibeProcIlicitosTask exibir = new ExibeProcIlicitosTask(computadorOn, funcionarioOn.getIdFuncionario(), 0, 10000);
+        ExibeProcIlicitosTask exibir = new ExibeProcIlicitosTask(computadorOn, funcionarioOn.getIdFuncionario(), 11000, 10000);
         agendador.schedule(exibir, exibir.getDelay(), exibir.getPeriodo());
 
 

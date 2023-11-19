@@ -44,9 +44,9 @@ public class ProcessoDao {
     }
 
 
-    public void insertRegistroIlicito(ProcessoIlicito processo, Integer cod){
+    public void insertRegistroIlicito(String nome, Integer cod){
         this.connection.update("CALL spInsertRegistroIlicito(?, ?);",
-                processo.getNomeProcesso(),
+                nome,
                 cod
                         );
     }
