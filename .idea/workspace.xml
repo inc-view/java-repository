@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65c53a53-1774-4ccf-a7ed-b23515313ee4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/ProcessoIlicito.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/inc/tasks/InsertRegistroJanelaTasks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/inc/tasks/JanelaInsertTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/inc/tasks/UpdateListJanelaTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/dao/ComputadorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/ComputadorDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/dao/ProcessoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/ProcessoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/Computador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/Computador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/Processo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/Processo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/Janela.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/Janela.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/ProcessoComputador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/ProcessoComputador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/inc/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/inc/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,12 +23,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -45,8 +51,8 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/laris/Desktop/inc-view/java-repository&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;alterando-java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/MICRO/Desktop/java-repository&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -55,6 +61,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="view.inc.tasks" />
       <recent name="view.inc.dao" />
     </key>
   </component>
@@ -84,25 +91,27 @@
     </task>
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view/inc/dao/ProcessoDao.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view/inc/Main.java</url>
-          <line>85</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view/inc/dao/ProcessoDao.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="alterando-java" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

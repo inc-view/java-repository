@@ -23,6 +23,18 @@ public class ProcessoDao {
         );
     }
 
+    public void insertPrograma(String nomePrograma, Integer idComputador){
+        this.connection.update("CALL spInsertProcesso(?, ?)",
+                nomePrograma, idComputador
+        );
+    }
+
+    public void insertRegistro(String nome, Integer fkComputador, Double registroCPU, Double registroRAM){
+        this.connection.update("CALL spInsertRegistroProcesso(?, ?, ?, ?)",
+                nome, fkComputador, registroCPU, registroRAM
+        );
+    }
+
     public void insertIlicito(Processo processo){
         this.connection.update("INSERT INTO processoIlicito (fkProcesso) VALUES ((SELECT idProcesso FROM Processo WHERE nomeProcesso LIKE '%?%'));",
                 processo.getNomeProcesso()
