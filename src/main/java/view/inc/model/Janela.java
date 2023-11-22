@@ -6,6 +6,7 @@ import view.inc.dao.ProcessoDao;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Janela {
 
@@ -25,6 +26,10 @@ public class Janela {
 
     public void getJanelas(){
         janelas = looca.getGrupoDeJanelas().getJanelasVisiveis();
+    }
+
+    public List<com.github.britooo.looca.api.group.janelas.Janela> getAllJanelas(){
+        return looca.getGrupoDeJanelas().getJanelas();
     }
 
     public Integer getQuantidadeJanelas(){ return janelas.size(); }

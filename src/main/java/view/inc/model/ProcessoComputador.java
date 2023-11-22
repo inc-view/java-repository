@@ -59,7 +59,7 @@ public class ProcessoComputador {
     public void killProcess(int pid) throws IOException {
         Runtime rt = Runtime.getRuntime();
         if (System.getProperty("os.name").toLowerCase().indexOf("windows") > -1) {
-            rt.exec("tskill " + pid);
+            rt.exec("taskkill /PID " + pid);
         }else{
             rt.exec("kill -9 " + pid);
         }

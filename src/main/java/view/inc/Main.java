@@ -3,6 +3,7 @@ package view.inc;
 import com.github.britooo.looca.api.core.Looca;
 import org.h2.command.dml.Insert;
 import view.inc.model.*;
+import view.inc.tasks.ExibeProcIlicitosTask;
 import view.inc.tasks.InsertRegistroJanelaTasks;
 import view.inc.tasks.JanelaInsertTask;
 import view.inc.tasks.UpdateListJanelaTask;
@@ -59,19 +60,6 @@ public class Main {
         }while(!recognized);
 
 
-        /*Janela janelas = new Janela();
-        Integer qtdeTotalProgramas = janelas.getQuantidadeJanelas();
-        while(true){
-
-            janelas.getJanelas();
-            if(janelas.getQuantidadeJanelas() != qtdeTotalProgramas){
-                qtdeTotalProgramas = janelas.getQuantidadeJanelas();
-                janelas.insertJanelas(computadorOn.getIdComputador());
-                janelas.showJanelas();
-            }
-
-        }*/
-
 
         Timer agendador = new Timer();
         Janela janelas = new Janela();
@@ -84,6 +72,9 @@ public class Main {
 
         JanelaInsertTask tarefaInsertJanela = new JanelaInsertTask(janelas, computadorOn);
         agendador.schedule(tarefaInsertJanela, 0, 10000);
+
+        ExibeProcIlicitosTask exibir = new ExibeProcIlicitosTask(computadorOn, funcionarioOn.getIdFuncionario(), 11000, 10000);
+        agendador.schedule(exibir, exibir.getDelay(), exibir.getPeriodo());
 
 
     }

@@ -17,7 +17,7 @@ public class Processo{
     private ProcessoDao processoDao = new ProcessoDao();
     private List<Processo> processos;
 
-   private  Looca looca = new Looca();
+    private  Looca looca = new Looca();
 
     public Processo(){}
     public Processo(Integer idProcesso, String nomeProcesso,Integer fkFuncionario, String ipComputador, Double usoCPU) {
@@ -50,18 +50,6 @@ public class Processo{
             System.out.println(p1);
             this.processos.add(p1);
         }
-    }
-
-    public void cadastrarProcesso(Integer fkFuncionario, String ipComputador){
-
-        List<com.github.britooo.looca.api.group.processos.Processo> processos = looca.getGrupoDeProcessos().getProcessos();
-        for (com.github.britooo.looca.api.group.processos.Processo processo : processos) {
-            Integer PID = processo.getPid();
-            String nomeProcesso = processo.getNome();
-            Processo p = new Processo(PID, nomeProcesso,fkFuncionario, ipComputador);
-                    processoDao.insert(p);
-        }
-
     }
 
 
