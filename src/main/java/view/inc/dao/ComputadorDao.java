@@ -27,8 +27,8 @@ public class ComputadorDao {
 
     public void insert(Computador computador){
         this.connection.update(
-                "INSERT INTO computador (nomePatrimonio, marca, fkFuncionario, sistemaOperacional, ipComputador)\n" +
-                        "SELECT * FROM (SELECT ?, ?, ?, ?, ?) AS tmp\n" +
+                "INSERT INTO computador (nomePatrimonio, marca, fkFuncionario, sistemaOperacional, ipComputador, ativo)\n" +
+                        "SELECT * FROM (SELECT ?, ?, ?, ?, ?, true) AS tmp\n" +
                         "WHERE NOT EXISTS (\n" +
                         "    SELECT nomePatrimonio FROM computador WHERE nomePatrimonio = ?\n" +
                         ") LIMIT 1;",

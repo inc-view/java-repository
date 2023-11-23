@@ -19,10 +19,7 @@ public class JanelaInsertTask extends TimerTask {
 
     @Override
     public void run() {
-        if(janela.getQuantidadeJanelas() != qtdeTotalProgramas){
-            qtdeTotalProgramas = janela.getQuantidadeJanelas();
-            janela.insertJanelas(computador.getIdComputador());
-            System.out.println("Atualizou");
-        }
+        janela.insertJanelas(computador.getIdComputador());
+        System.out.println("Atualizou");
     }
 }

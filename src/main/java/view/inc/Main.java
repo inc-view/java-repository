@@ -65,7 +65,7 @@ public class Main {
         Janela janelas = new Janela();
 
         InsertRegistroJanelaTasks tarefaInsertRegistrojanela = new InsertRegistroJanelaTasks(janelas, computadorOn);
-        agendador.schedule(tarefaInsertRegistrojanela, 10000, 5000);
+        agendador.schedule(tarefaInsertRegistrojanela, 11000, 5000);
 
         UpdateListJanelaTask tarefaUpdateList = new UpdateListJanelaTask(janelas);
         agendador.schedule(tarefaUpdateList, 0, 9000);

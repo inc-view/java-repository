@@ -9,12 +9,10 @@ public class InsertRegistroJanelaTasks extends TimerTask {
 
     private Computador computador;
     private Janela janela;
-    private Integer qtdeTotalProgramas;
 
     public InsertRegistroJanelaTasks(Janela janela, Computador computador) {
         this.computador = computador;
         this.janela = janela;
-        qtdeTotalProgramas = janela.getQuantidadeJanelas();
     }
 
     @Override
