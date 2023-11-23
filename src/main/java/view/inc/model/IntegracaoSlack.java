@@ -8,9 +8,9 @@ import com.slack.api.methods.response.chat.ChatPostMessageResponse;
 
 import java.io.IOException;
 
-public class Integracao {
-    public static void main(String[] args) {
-        String token = "xoxb-6151373049190-6243008597172-p3SGHzeFYdt5tnsAhGbjdh91";
+public class IntegracaoSlack {
+    public void enviarMensagem() {
+        String token = "xoxb-6151373049190-6243008597172-yFM8E7Xb8u3OhoOtJpCekx7j";
         String channelId = "C064FAZ39GW";
         try {
 
@@ -18,7 +18,7 @@ public class Integracao {
             ChatPostMessageRequestBuilder messageRequest = ChatPostMessageRequest.builder()
                     .token(token)
                     .channel(channelId)
-                    .text("Sua mensagem aqui");
+                    .text("Sua mensagem aqui\uD83D\uDEA8");
 
             ChatPostMessageResponse response = slack.methods().chatPostMessage(messageRequest.build());
 

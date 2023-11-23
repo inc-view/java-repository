@@ -1,11 +1,6 @@
 package view.inc;
 
-import view.inc.model.Computador;
-import view.inc.model.Funcionario;
-import view.inc.model.Integracao;
-import view.inc.model.Processo;
-
-import java.util.Scanner;
+import view.inc.model.IntegracaoSlack;
 
 public class Main {
     public static void main(String[] args){
@@ -74,6 +69,6 @@ public class Main {
             }
         }while(opcao != 0);*/
 
-        Integracao integracao = new Integracao();
+        IntegracaoSlack integracao = new IntegracaoSlack();
     }
 }

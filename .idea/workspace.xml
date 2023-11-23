@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="65c53a53-1774-4ccf-a7ed-b23515313ee4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/Integracao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/Integracao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/Integracao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/IntegracaoSlack.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +54,8 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Integracao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.inc.model.Integracao" />
+    <configuration name="IntegracaoSlack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.inc.model.IntegracaoSlack" />
       <module name="api-monitoring-viss" />
       <extension name="coverage">
         <pattern>
@@ -81,7 +82,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Integracao" />
+        <item itemvalue="Application.IntegracaoSlack" />
       </list>
     </recent_temporary>
   </component>
