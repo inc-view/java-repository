@@ -5,6 +5,7 @@ import view.inc.model.Processo;
 import view.inc.model.ProcessoIlicito;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.TimerTask;
 
 public class ExibeProcIlicitosTask extends TimerTask {
@@ -16,7 +17,7 @@ public class ExibeProcIlicitosTask extends TimerTask {
     private int delay;
     private int periodo;
 
-    public ExibeProcIlicitosTask(Computador computador, Integer fkFuncionario, int delay, int periodo){
+    public ExibeProcIlicitosTask(Computador computador, Integer fkFuncionario, int delay, int periodo) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         this.computador = computador;
         this.fkFuncionario = fkFuncionario;
         this.delay = delay;
@@ -26,6 +27,7 @@ public class ExibeProcIlicitosTask extends TimerTask {
     public void run() {
         try {
             processoIlicito.checkProcessosIlicitos(computador);
+            processoIlicito.checkProcIlicitosSQL(computador);
         } catch (Exception e) {
             e.printStackTrace();
         }

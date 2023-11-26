@@ -5,14 +5,15 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import view.inc.model.Computador;
 import view.inc.model.Funcionario;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class ComputadorDao {
 
     private JdbcTemplate connection;
 
-    public ComputadorDao() {
-        Connection conn = new Connection();
+    public ComputadorDao() throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
+        ConnectionMySQL conn = new ConnectionMySQL();
         this.connection = conn.getConnection();
     }
 

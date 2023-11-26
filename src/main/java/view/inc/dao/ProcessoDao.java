@@ -8,13 +8,14 @@ import view.inc.model.Janela;
 import view.inc.model.Processo;
 import view.inc.model.ProcessoIlicito;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class ProcessoDao {
     private JdbcTemplate connection;
 
-    public ProcessoDao() {
-        Connection conn = new Connection();
+    public ProcessoDao() throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
+        ConnectionMySQL conn = new ConnectionMySQL();
         this.connection = conn.getConnection();
     }
 

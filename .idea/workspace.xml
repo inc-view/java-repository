@@ -5,11 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65c53a53-1774-4ccf-a7ed-b23515313ee4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/ComputadorSQLDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/ConnectionMySQL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/ConnectionSQL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/FuncionarioSQLDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/ProcessoSQLDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/dao/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/ProcessoRowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/ProcessoRowMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/dao/ComputadorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/ComputadorDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/dao/Connection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/dao/FuncionarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/FuncionarioDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/dao/ProcessoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/ProcessoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/Computador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/Computador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/Janela.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/Janela.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/Processo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/Processo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/ProcessoIlicito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/ProcessoIlicito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/tasks/ExibeProcIlicitosTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/tasks/ExibeProcIlicitosTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/tasks/InsertRegistroJanelaTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/tasks/InsertRegistroJanelaTasks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/tasks/JanelaInsertTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/tasks/JanelaInsertTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/inc/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/inc/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,18 +62,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;larissa&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/laris/Desktop/inc-view/java-repository - Copia&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "larissa",
+    "last_opened_file_path": "C:/Users/laris/Desktop/LP/AC3/continuada3-versao-incompleta",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="ConnectionSQL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.inc.dao.ConnectionSQL" />
+      <module name="api-monitoring-viss" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="view.inc.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ConnectionSQL" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -78,6 +117,41 @@
           <properties class="org.springframework.jdbc.BadSqlGrammarException" package="org.springframework.jdbc" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/view/inc/dao/ProcessoDao.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/view/inc/model/Computador.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/view/inc/Main.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/view/inc/tasks/InsertRegistroJanelaTasks.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/view/inc/Main.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/view/inc/Main.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/view/inc/model/Funcionario.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

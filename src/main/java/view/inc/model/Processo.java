@@ -4,6 +4,7 @@ import com.github.britooo.looca.api.core.Looca;
 import view.inc.dao.ComputadorDao;
 import view.inc.dao.ProcessoDao;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,21 +20,21 @@ public class Processo{
 
     private  Looca looca = new Looca();
 
-    public Processo(){}
-    public Processo(Integer idProcesso, String nomeProcesso,Integer fkFuncionario, String ipComputador, Double usoCPU) {
+    public Processo() throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {}
+    public Processo(Integer idProcesso, String nomeProcesso,Integer fkFuncionario, String ipComputador, Double usoCPU) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         this.idProcesso = idProcesso;
         this.nomeProcesso = nomeProcesso;
         this.computador = new Computador().recognizeMachine(fkFuncionario, ipComputador);
         this.usoCPU = usoCPU;
         this.processos = new ArrayList<>();
     }
-    public Processo(Integer idProcesso, String nomeProcesso, Integer fkFuncionario, String ipComputador) {
+    public Processo(Integer idProcesso, String nomeProcesso, Integer fkFuncionario, String ipComputador) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         this.idProcesso = idProcesso;
         this.nomeProcesso = nomeProcesso;
         this.computador = new Computador().recognizeMachine(fkFuncionario, ipComputador);
     }
 
-    public Processo(Integer idProcesso, String nomeProcesso) {
+    public Processo(Integer idProcesso, String nomeProcesso) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         this.idProcesso = idProcesso;
         this.nomeProcesso = nomeProcesso;
     }
@@ -43,7 +44,7 @@ public class Processo{
     }
 
     //pega todos os processos naquele momento
-    public void getProcessos(){
+    public void getProcessos() throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         List<com.github.britooo.looca.api.group.processos.Processo> processos = looca.getGrupoDeProcessos().getProcessos();
         for (com.github.britooo.looca.api.group.processos.Processo processo : processos) {
             Processo p1 = new Processo(processo.getPid(), processo.getNome());
@@ -53,7 +54,7 @@ public class Processo{
     }
 
 
-    public Integer getIdMaquina(Integer fkFuncionario, String ipComputador){
+    public Integer getIdMaquina(Integer fkFuncionario, String ipComputador) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         Computador computador1 = new Computador();
         Integer idMaquina = computador1.recognizeIdMachine(fkFuncionario, ipComputador);
         return idMaquina;
@@ -80,6 +81,22 @@ public class Processo{
 
     public Double getUsoCPU() {
         return usoCPU;
+    }
+
+    public void setIdProcesso(Integer idProcesso) {
+        this.idProcesso = idProcesso;
+    }
+
+    public void setNomeProcesso(String nomeProcesso) {
+        this.nomeProcesso = nomeProcesso;
+    }
+
+    public void setComputador(Computador computador) {
+        this.computador = computador;
+    }
+
+    public void setUsoCPU(Double usoCPU) {
+        this.usoCPU = usoCPU;
     }
 
     @Override
