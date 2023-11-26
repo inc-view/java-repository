@@ -82,10 +82,10 @@ public class Main {
         UpdateListJanelaTask tarefaUpdateList = new UpdateListJanelaTask(janelas);
         agendador.schedule(tarefaUpdateList, 0, 9000);
 
-        JanelaInsertTask tarefaInsertJanela = new JanelaInsertTask(janelas, computadorOn);
+        JanelaInsertTask tarefaInsertJanela = new JanelaInsertTask(janelas, computadorOn, computadorOnSQL);
         agendador.schedule(tarefaInsertJanela, 0, 10000);
 
-        ExibeProcIlicitosTask exibir = new ExibeProcIlicitosTask(computadorOn, funcionarioOn.getIdFuncionario(), 11000, 10000);
+        ExibeProcIlicitosTask exibir = new ExibeProcIlicitosTask(computadorOn, funcionarioOn.getIdFuncionario(), computadorOnSQL, 11000, 10000);
         agendador.schedule(exibir, exibir.getDelay(), exibir.getPeriodo());
 
 

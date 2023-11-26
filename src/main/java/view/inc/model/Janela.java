@@ -54,6 +54,16 @@ public class Janela {
             }
         }
     }
+    public void insertRegistroSQL(Integer computador) throws SQLException {
+        for (com.github.britooo.looca.api.group.janelas.Janela janelaAtual : janelas){
+            if(!janelaAtual.getTitulo().isEmpty()){
+                int pid = janelaAtual.getPid().intValue();
+                processoSQLDao.insertRegistro(janelaAtual.getTitulo(), computador,
+                        processoComputador.getProcessCPU(pid), processoComputador.getProcessRAM(pid));
+            }
+        }
+    }
+
 
     public void insertRegistroJanela(Integer idComputador) throws SQLException {
         for (com.github.britooo.looca.api.group.janelas.Janela janelaAtual : janelas){
@@ -63,10 +73,6 @@ public class Janela {
                         janelaAtual.getTitulo(), idComputador,
                         processoComputador.getProcessCPU(pid), processoComputador.getProcessRAM(pid)
                 );
-                processoSQLDao.insertRegistro(janelaAtual.getTitulo(),
-                        idComputador,
-                        processoComputador.getProcessCPU(pid),
-                        processoComputador.getProcessRAM(pid));
             }
         }
     }

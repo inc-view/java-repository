@@ -24,7 +24,7 @@ public class InsertRegistroJanelaTasks extends TimerTask {
     public void run() {
         try {
             //janela.insertRegistroJanela(computador.getIdComputador());
-            janela.insertJanelasSQL(computadorSQL.getIdComputador());
+            janela.insertRegistroSQL(computadorSQL.getIdComputador());
             System.out.println("Inseriu registro");
         } catch (Exception e) {
             e.printStackTrace();

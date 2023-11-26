@@ -9,12 +9,14 @@ import java.util.TimerTask;
 public class JanelaInsertTask extends TimerTask {
 
     private Computador computador;
+    private Computador computadorSQL;
     private Janela janela;
     private Integer qtdeTotalProgramas;
 
-    public JanelaInsertTask(Janela janela, Computador computador) {
+    public JanelaInsertTask(Janela janela, Computador computador, Computador computadorSQL) {
         this.computador = computador;
         this.janela = janela;
+        this.computadorSQL = computadorSQL;
         qtdeTotalProgramas = janela.getQuantidadeJanelas();
     }
 
@@ -24,6 +26,7 @@ public class JanelaInsertTask extends TimerTask {
             qtdeTotalProgramas = janela.getQuantidadeJanelas();
             try {
                 janela.insertJanelas(computador.getIdComputador());
+                janela.insertJanelasSQL(computadorSQL.getIdComputador());
                 System.out.println("Atualizou");
             } catch (SQLException e) {
                 throw new RuntimeException(e);

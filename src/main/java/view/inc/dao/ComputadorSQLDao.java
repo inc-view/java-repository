@@ -40,25 +40,10 @@ public class ComputadorSQLDao {
     public void insert(Computador computador) throws SQLException {
         Statement st = con.createStatement();
         String sql =String.format("""
-                INSERT INTO computador (nomePatrimonio, marca, fkFuncionario, sistemaOperacional, ipComputador)
-                SELECT *
-                        FROM (
-                                SELECT
-        '%s' AS nomePatrimonio,
-        '%s' AS marca,
-        %d AS fkFuncionario,
-                '%s' AS sistemaOperacional,
-        '%s' AS ipComputador
-            ) AS tmp
-        WHERE NOT EXISTS (
-                SELECT TOP (1) nomePatrimonio
-                FROM computador
-                WHERE nomePatrimonio = '%s'
-        );""",
+                EXEC spInsertComputador '%s', '%s', %d, '%s', '%s'""",
         computador.getNomePatrimonio(), computador.getMarca(), computador.getFkFuncionario(),
-                computador.getSistemaOperacional(), computador.getIpComputador(), computador.getNomePatrimonio()
+                computador.getSistemaOperacional(), computador.getIpComputador()
         );
         int count = st.executeUpdate(sql);
-        System.out.println("ROWS AFFECTED:" + count);
     }
 }

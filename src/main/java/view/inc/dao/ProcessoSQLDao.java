@@ -18,18 +18,25 @@ public class ProcessoSQLDao {
     public void insertPrograma(String nomePrograma, Integer idComputador) throws SQLException {
         Statement st = this.con.createStatement();
         String sql = "EXEC spInsertProcesso'" + nomePrograma + "'," +  idComputador + ";";
-        st.executeQuery(sql);
+        int count = st.executeUpdate(sql);
     }
 
     public void insertRegistro(String nome, Integer fkComputador, Double registroCPU, Double registroRAM) throws SQLException {
         Statement st = this.con.createStatement();
-        String sql = "EXEC spInsertRegistroProcesso'" + nome + "'," + fkComputador + "," + registroCPU + "," + registroRAM + ";";
-        st.executeQuery(sql);
+        String tratar1 = registroCPU.toString().replace(",", ".");
+        String tratar2 = registroRAM.toString().replace(",", ".");
+        String sql = String.format("""
+                        EXEC spInsertNovoRegistro @vNomeProcesso = '%s',
+                                                                    		@vfkComputador = %d,
+                                                                    		@dadoCPU = %s,
+                                                                    		@RAM = %s;""",
+                nome , fkComputador , tratar1, tratar2 );
+        st.executeUpdate(sql);
     }
     public void insertRegistroIlicito(String nome, Integer cod) throws SQLException {
         Statement st = this.con.createStatement();
         String sql = "EXEC spInsertRegistroIlicito'" + nome + "'," + cod + ";";
-        st.executeQuery(sql);
+        st.executeUpdate(sql);
     }
 
     public List<ProcessoIlicito> selectAllProcessosIlicitos(Integer computador) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {

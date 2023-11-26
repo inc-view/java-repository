@@ -23,14 +23,11 @@ public class Funcionario {
 
     /* MÉTODOS */
     public Funcionario logar(String email, String senha){
-
         if(!email.isEmpty() || !senha.isEmpty()){
-
             List<Funcionario> dadosFuncionario = funcionarioDao.selectLogin(email, senha);
             if(!dadosFuncionario.isEmpty()){
                 return dadosFuncionario.get(0);
             }
-
         }
         return null;
 
