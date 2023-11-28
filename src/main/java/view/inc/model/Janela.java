@@ -2,8 +2,10 @@ package view.inc.model;
 
 import com.github.britooo.looca.api.core.Looca;
 import view.inc.dao.ProcessoDao;
+import view.inc.dao.ProcessoSQLDao;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -16,8 +18,9 @@ public class Janela {
 
 
     ProcessoDao processoDao = new ProcessoDao();
+    ProcessoSQLDao processoSQLDao = new ProcessoSQLDao();
 
-    public Janela(){
+    public Janela() throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         this.janelas = new ArrayList<>();
         this.looca = new Looca();
         this.processoComputador = new ProcessoComputador();
@@ -35,7 +38,7 @@ public class Janela {
     public Integer getQuantidadeJanelas(){ return janelas.size(); }
 
 
-    public void insertJanelas(Integer idComputador){
+    public void insertJanelas(Integer idComputador) throws SQLException {
         for (com.github.britooo.looca.api.group.janelas.Janela janelaAtual : janelas){
             if(!janelaAtual.getTitulo().isEmpty()){
                 int pid = janelaAtual.getPid().intValue();
@@ -43,8 +46,26 @@ public class Janela {
             }
         }
     }
+    public void insertJanelasSQL(Integer idComputador) throws SQLException {
+        for (com.github.britooo.looca.api.group.janelas.Janela janelaAtual : janelas){
+            if(!janelaAtual.getTitulo().isEmpty()){
+                int pid = janelaAtual.getPid().intValue();
+                processoSQLDao.insertPrograma(janelaAtual.getTitulo(), idComputador);
+            }
+        }
+    }
+    public void insertRegistroSQL(Integer computador) throws SQLException {
+        for (com.github.britooo.looca.api.group.janelas.Janela janelaAtual : janelas){
+            if(!janelaAtual.getTitulo().isEmpty()){
+                int pid = janelaAtual.getPid().intValue();
+                processoSQLDao.insertRegistro(janelaAtual.getTitulo(), computador,
+                        processoComputador.getProcessCPU(pid), processoComputador.getProcessRAM(pid));
+            }
+        }
+    }
 
-    public void insertRegistroJanela(Integer idComputador){
+
+    public void insertRegistroJanela(Integer idComputador) throws SQLException {
         for (com.github.britooo.looca.api.group.janelas.Janela janelaAtual : janelas){
             if(!janelaAtual.getTitulo().isEmpty()){
                 int pid = janelaAtual.getPid().intValue();

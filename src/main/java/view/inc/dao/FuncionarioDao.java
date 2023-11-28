@@ -4,14 +4,15 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import view.inc.model.Funcionario;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class FuncionarioDao {
 
     private JdbcTemplate connection;
 
-    public FuncionarioDao() {
-        Connection conn = new Connection();
+    public FuncionarioDao() throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
+        ConnectionMySQL conn = new ConnectionMySQL();
         this.connection = conn.getConnection();
     }
 

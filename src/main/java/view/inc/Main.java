@@ -8,16 +8,20 @@ import view.inc.tasks.InsertRegistroJanelaTasks;
 import view.inc.tasks.JanelaInsertTask;
 import view.inc.tasks.UpdateListJanelaTask;
 
+import java.sql.SQLException;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.Timer;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Scanner inputText = new Scanner(System.in);
         Scanner inputTextLong = new Scanner(System.in);
         Computador computadorOn;
+        Computador computadorOnSQL;
         Funcionario funcionarioOn;
+        Funcionario funcionarioOnSQL;
 
         Boolean logged = false;
         do{
@@ -30,7 +34,9 @@ public class Main {
 
             funcionarioOn = new Funcionario();
             funcionarioOn = funcionarioOn.logar(email, senha);
-            logged = (funcionarioOn != null);
+            funcionarioOnSQL = new Funcionario();
+            funcionarioOnSQL = funcionarioOnSQL.logarSql(email, senha);
+            logged = (funcionarioOnSQL != null);
 
             if(!logged){
                 System.out.println("Email ou Senha incorretos!");
@@ -44,17 +50,23 @@ public class Main {
         do{
 
             computadorOn = new Computador();
+            computadorOnSQL = new Computador();
             Integer fkFuncionario = funcionarioOn.getIdFuncionario();
+            Integer fkFuncionarioSQL = funcionarioOnSQL.getIdFuncionario();
             String ipComputador = computadorOn.getIpMaquina();
+            String ipComputadorSQL = computadorOnSQL.getIpMaquina();
 
             computadorOn = computadorOn.recognizeMachine(fkFuncionario, ipComputador);
-            if(computadorOn != null){
+            computadorOnSQL = computadorOnSQL.recognizeMachineSQL(fkFuncionarioSQL, ipComputadorSQL);
+            if(computadorOnSQL != null){
                 System.out.println(">> Bem-vindo!");
                 recognized = true;
             }else{
                 System.out.println(">> Registrando máquina...");
                 computadorOn = new Computador();
                 computadorOn.registerMachine(fkFuncionario);
+                computadorOnSQL = new Computador();
+                computadorOnSQL.registerMachineSQL(fkFuncionarioSQL);
             }
 
         }while(!recognized);
@@ -64,16 +76,16 @@ public class Main {
         Timer agendador = new Timer();
         Janela janelas = new Janela();
 
-        InsertRegistroJanelaTasks tarefaInsertRegistrojanela = new InsertRegistroJanelaTasks(janelas, computadorOn);
+        InsertRegistroJanelaTasks tarefaInsertRegistrojanela = new InsertRegistroJanelaTasks(janelas, computadorOn, computadorOnSQL);
         agendador.schedule(tarefaInsertRegistrojanela, 10000, 5000);
 
         UpdateListJanelaTask tarefaUpdateList = new UpdateListJanelaTask(janelas);
         agendador.schedule(tarefaUpdateList, 0, 9000);
 
-        JanelaInsertTask tarefaInsertJanela = new JanelaInsertTask(janelas, computadorOn);
+        JanelaInsertTask tarefaInsertJanela = new JanelaInsertTask(janelas, computadorOn, computadorOnSQL);
         agendador.schedule(tarefaInsertJanela, 0, 10000);
 
-        ExibeProcIlicitosTask exibir = new ExibeProcIlicitosTask(computadorOn, funcionarioOn.getIdFuncionario(), 11000, 10000);
+        ExibeProcIlicitosTask exibir = new ExibeProcIlicitosTask(computadorOn, funcionarioOn.getIdFuncionario(), computadorOnSQL, 11000, 10000);
         agendador.schedule(exibir, exibir.getDelay(), exibir.getPeriodo());
 
 

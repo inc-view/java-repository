@@ -1,6 +1,8 @@
 package view.inc.model;
 import view.inc.dao.FuncionarioDao;
+import view.inc.dao.FuncionarioSQLDao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class Funcionario {
@@ -13,38 +15,31 @@ public class Funcionario {
     private Integer fkGestor;
     private Integer fkEmpresa;
     private FuncionarioDao  funcionarioDao = new FuncionarioDao();
+    private FuncionarioSQLDao funcionarioSQLDao = new FuncionarioSQLDao();
+
+    public Funcionario() throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    }
 
 
     /* MÉTODOS */
     public Funcionario logar(String email, String senha){
-
         if(!email.isEmpty() || !senha.isEmpty()){
-
             List<Funcionario> dadosFuncionario = funcionarioDao.selectLogin(email, senha);
             if(!dadosFuncionario.isEmpty()){
                 return dadosFuncionario.get(0);
             }
-
         }
         return null;
 
     }
 
+    public Funcionario logarSql(String email, String senha) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+        if(!email.isEmpty() || !senha.isEmpty()){
+            return funcionarioSQLDao.selectLogin(email, senha);
+        }
+        return null;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 
     /* GETTERS E SETTERS */
