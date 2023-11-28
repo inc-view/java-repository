@@ -23,8 +23,19 @@ public class ProcessoSQLDao {
 
     public void insertRegistro(String nome, Integer fkComputador, Double registroCPU, Double registroRAM) throws SQLException {
         Statement st = this.con.createStatement();
-        String tratar1 = registroCPU.toString().replace(",", ".");
-        String tratar2 = registroRAM.toString().replace(",", ".");
+        String tratar1;
+        if(registroCPU != null) {
+            tratar1 = registroCPU.toString().replace(",", ".");
+        }else{
+            tratar1 = "0.0";
+        }
+        String tratar2;
+        if(registroRAM != null) {
+            tratar2 = registroRAM.toString().replace(",", ".");
+        }else{
+            tratar2 = "0.0";
+        }
+
         String sql = String.format("""
                         EXEC spInsertNovoRegistro @vNomeProcesso = '%s',
                                                                     		@vfkComputador = %d,

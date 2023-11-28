@@ -22,8 +22,6 @@ public class JanelaInsertTask extends TimerTask {
 
     @Override
     public void run() {
-        if(janela.getQuantidadeJanelas() != qtdeTotalProgramas){
-            qtdeTotalProgramas = janela.getQuantidadeJanelas();
             try {
                 janela.insertJanelas(computador.getIdComputador());
                 janela.insertJanelasSQL(computadorSQL.getIdComputador());
@@ -31,7 +29,5 @@ public class JanelaInsertTask extends TimerTask {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-
-        }
     }
 }
