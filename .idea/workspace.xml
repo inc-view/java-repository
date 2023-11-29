@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65c53a53-1774-4ccf-a7ed-b23515313ee4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/dao/ConnectionSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/ConnectionSQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/dao/ProcessoSQLDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/ProcessoSQLDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/tasks/ExibeProcIlicitosTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/tasks/ExibeProcIlicitosTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/tasks/InsertRegistroJanelaTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/tasks/InsertRegistroJanelaTasks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/tasks/JanelaInsertTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/tasks/JanelaInsertTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/inc/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/inc/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +52,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "larissa",
-    "last_opened_file_path": "C:/Users/laris/Desktop/inc-view/java-repository - Copia",
+    "last_opened_file_path": "C:/Users/laris/Desktop/inc-view/javaRepository",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -109,7 +113,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/view/inc/tasks/InsertRegistroJanelaTasks.java</url>
-          <line>26</line>
+          <line>25</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint type="java-line">

@@ -49,22 +49,22 @@ public class Main {
         Boolean recognized = false;
         do{
 
-            computadorOn = new Computador();
+            //computadorOn = new Computador();
             computadorOnSQL = new Computador();
-            Integer fkFuncionario = funcionarioOn.getIdFuncionario();
+            //Integer fkFuncionario = funcionarioOn.getIdFuncionario();
             Integer fkFuncionarioSQL = funcionarioOnSQL.getIdFuncionario();
-            String ipComputador = computadorOn.getIpMaquina();
+            //String ipComputador = computadorOn.getIpMaquina();
             String ipComputadorSQL = computadorOnSQL.getIpMaquina();
 
-            computadorOn = computadorOn.recognizeMachine(fkFuncionario, ipComputador);
+            //computadorOn = computadorOn.recognizeMachine(fkFuncionario, ipComputador);
             computadorOnSQL = computadorOnSQL.recognizeMachineSQL(fkFuncionarioSQL, ipComputadorSQL);
             if(computadorOnSQL != null){
                 System.out.println(">> Bem-vindo!");
                 recognized = true;
             }else{
                 System.out.println(">> Registrando máquina...");
-                computadorOn = new Computador();
-                computadorOn.registerMachine(fkFuncionario);
+              //  computadorOn = new Computador();
+            //    computadorOn.registerMachine(fkFuncionario);
                 computadorOnSQL = new Computador();
                 computadorOnSQL.registerMachineSQL(fkFuncionarioSQL);
             }
@@ -76,16 +76,16 @@ public class Main {
         Timer agendador = new Timer();
         Janela janelas = new Janela();
 
-        InsertRegistroJanelaTasks tarefaInsertRegistrojanela = new InsertRegistroJanelaTasks(janelas, computadorOn, computadorOnSQL);
+        InsertRegistroJanelaTasks tarefaInsertRegistrojanela = new InsertRegistroJanelaTasks(janelas, computadorOnSQL);
         agendador.schedule(tarefaInsertRegistrojanela, 10000, 5000);
 
         UpdateListJanelaTask tarefaUpdateList = new UpdateListJanelaTask(janelas);
         agendador.schedule(tarefaUpdateList, 0, 9000);
 
-        JanelaInsertTask tarefaInsertJanela = new JanelaInsertTask(janelas, computadorOn, computadorOnSQL);
+        JanelaInsertTask tarefaInsertJanela = new JanelaInsertTask(janelas, computadorOnSQL);
         agendador.schedule(tarefaInsertJanela, 0, 10000);
 
-        ExibeProcIlicitosTask exibir = new ExibeProcIlicitosTask(computadorOn, funcionarioOn.getIdFuncionario(), computadorOnSQL, 11000, 10000);
+        ExibeProcIlicitosTask exibir = new ExibeProcIlicitosTask(funcionarioOnSQL.getIdFuncionario(), computadorOnSQL, 11000, 10000);
         agendador.schedule(exibir, exibir.getDelay(), exibir.getPeriodo());
 
 

@@ -3,7 +3,6 @@ package view.inc.tasks;
 import view.inc.model.Computador;
 import view.inc.model.Janela;
 
-import java.sql.SQLException;
 import java.util.TimerTask;
 
 public class InsertRegistroJanelaTasks extends TimerTask {
@@ -13,8 +12,8 @@ public class InsertRegistroJanelaTasks extends TimerTask {
     private Janela janela;
     private Integer qtdeTotalProgramas;
 
-    public InsertRegistroJanelaTasks(Janela janela, Computador computador, Computador computadorSQL) {
-        this.computador = computador;
+    public InsertRegistroJanelaTasks(Janela janela, Computador computadorSQL) {
+        //this.computador = computador;
         this.janela = janela;
         this.computadorSQL = computadorSQL;
         qtdeTotalProgramas = janela.getQuantidadeJanelas();

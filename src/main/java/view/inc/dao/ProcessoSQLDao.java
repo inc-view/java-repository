@@ -40,7 +40,7 @@ public class ProcessoSQLDao {
                         EXEC spInsertNovoRegistro @vNomeProcesso = '%s',
                                                                     		@vfkComputador = %d,
                                                                     		@dadoCPU = %s,
-                                                                    		@RAM = %s;""",
+                                                                    		@dadoRAM = %s;""",
                 nome , fkComputador , tratar1, tratar2 );
         st.executeUpdate(sql);
     }
