@@ -17,10 +17,12 @@ public class IntegracaoJira {
         RestAssured.authentication = basicAuth;
 
         String descricao = """
-                Processo Ilícito encontrado
-                Ip do Computador: %s
-                Nome do Funcionário: %s
+                Processo Ilícito encontrado:
+                Ip do Computador: %s /
+                 Nome do Funcionário: %s\uD83D\uDEA8
                 """.formatted(ipComputador, nome);
+        descricao = descricao.replaceAll("\n", " ");
+
 
         String jsonBody =
                 "{"
