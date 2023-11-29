@@ -1,15 +1,20 @@
 package view.inc.model;
 
 import io.restassured.RestAssured;
+import io.restassured.authentication.PreemptiveBasicAuthScheme;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 
 public class IntegracaoJira {
 
     public static void main(String[] args) {
-        RestAssured.baseURI = "https://incview.atlassian.net";
+        String jiraURL = "https://incview.atlassian.net/rest/api/2/issue/";
 
-        String endpoint = "/rest/api/2/issue/";
+        PreemptiveBasicAuthScheme basicAuth = new PreemptiveBasicAuthScheme();
+        basicAuth.setUserName("Breno dos Reis Delmondes");
+        basicAuth.setPassword("Messi100$");
+
+        RestAssured.authentication = basicAuth;
 
         String jsonBody = "{"
                 + "\"fields\": {"
@@ -20,13 +25,12 @@ public class IntegracaoJira {
                 + "}"
                 + "}";
 
-        RequestSpecification request = RestAssured.given();
-        request.header("Content-Type", "application/json");
-        request.body(jsonBody);
+        Response response = RestAssured.given().contentType(ContentType.JSON).body(jsonBody).post(jiraURL);
 
-        Response response = request.post(endpoint);
+        int statusCode = response.getStatusCode();
+        String responseBody = response.getBody().asPrettyString();
 
-        System.out.println("Código de status: " + response.getStatusCode());
-        System.out.println("Resposta: " + response.asString());
+        System.out.println("Código de status: " + statusCode);
+        System.out.println("Resposta: " + responseBody);
     }
 }

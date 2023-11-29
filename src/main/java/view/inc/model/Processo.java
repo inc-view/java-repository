@@ -10,7 +10,9 @@ public class Processo {
     Computador computador;
     Double usoCPU;
 
-    public Processo(){}
+    public Processo() {
+    }
+
     public Processo(Integer idProcesso, String nomeProcesso, Computador computador, Double usoCPU) {
         this.idProcesso = idProcesso;
         this.nomeProcesso = nomeProcesso;
@@ -19,11 +21,12 @@ public class Processo {
     }
 
     //pega todos os processos naquele momento
-    public void getProcessos(){
+    public void getProcessos() {
         Looca looca = new Looca();
         List<com.github.britooo.looca.api.group.processos.Processo> processos = looca.getGrupoDeProcessos().getProcessos();
     }
-    public void getProcessosMaliciosos(){
+
+    public void getProcessosMaliciosos() {
 
     }
 

@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65c53a53-1774-4ccf-a7ed-b23515313ee4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/IntegracaoJira.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/inc/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/inc/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/dao/ComputadorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/ComputadorDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/dao/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/dao/FuncionarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/dao/FuncionarioDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/Computador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/Computador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/IntegracaoJira.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/IntegracaoJira.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/inc/model/Processo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/inc/model/Processo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

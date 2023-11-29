@@ -1,4 +1,5 @@
 package view.inc.model;
+
 import view.inc.dao.FuncionarioDao;
 
 import java.util.List;
@@ -12,16 +13,16 @@ public class Funcionario {
     private String senha;
     private Integer fkGestor;
     private Integer fkEmpresa;
-    private FuncionarioDao  funcionarioDao = new FuncionarioDao();
+    private FuncionarioDao funcionarioDao = new FuncionarioDao();
 
 
     /* MÉTODOS */
-    public Funcionario logar(String email, String senha){
+    public Funcionario logar(String email, String senha) {
 
-        if(!email.isEmpty() || !senha.isEmpty()){
+        if (!email.isEmpty() || !senha.isEmpty()) {
 
             List<Funcionario> dadosFuncionario = funcionarioDao.selectLogin(email, senha);
-            if(!dadosFuncionario.isEmpty()){
+            if (!dadosFuncionario.isEmpty()) {
                 return dadosFuncionario.get(0);
             }
 
@@ -29,22 +30,6 @@ public class Funcionario {
         return null;
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     /* GETTERS E SETTERS */

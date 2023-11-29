@@ -15,10 +15,10 @@ public class FuncionarioDao {
         this.connection = conn.getConnection();
     }
 
-    public List<Funcionario> selectLogin(String email, String senha){
+    public List<Funcionario> selectLogin(String email, String senha) {
 
         return this.connection.query("select * from funcionario where email = ? and senha = ?",
-                new BeanPropertyRowMapper<>(Funcionario.class),email, senha
+                new BeanPropertyRowMapper<>(Funcionario.class), email, senha
         );
 
     }

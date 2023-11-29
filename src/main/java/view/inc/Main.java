@@ -3,7 +3,7 @@ package view.inc;
 import view.inc.model.IntegracaoSlack;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 /*
         Scanner inputText = new Scanner(System.in);
         Scanner inputTextLong = new Scanner(System.in);

@@ -19,7 +19,10 @@ public class Computador {
 
     private ComputadorDao computadorDao = new ComputadorDao();
 
-    public Computador(){};
+    public Computador() {
+    }
+
+    ;
 
     public Computador(String nomePatrimonio, String marca, String sistemaOperacional, Integer fkFuncionario, String ipComputador) {
         this.nomePatrimonio = nomePatrimonio;
@@ -30,12 +33,12 @@ public class Computador {
     }
 
 
-    public Computador recognizeMachine(Integer fkFuncionario, String ipComputador){
+    public Computador recognizeMachine(Integer fkFuncionario, String ipComputador) {
 
-        if(fkFuncionario != null && fkFuncionario > 0 && !ipComputador.isEmpty()){
+        if (fkFuncionario != null && fkFuncionario > 0 && !ipComputador.isEmpty()) {
 
             List<Computador> dadosComputador = computadorDao.selectInfoComputador(fkFuncionario, ipComputador);
-            if(!dadosComputador.isEmpty()){
+            if (!dadosComputador.isEmpty()) {
                 return dadosComputador.get(0);
             }
 
@@ -44,7 +47,7 @@ public class Computador {
 
     }
 
-    public String getIpMaquina(){
+    public String getIpMaquina() {
         String ip = null;
         try {
             ip = InetAddress.getLocalHost().getHostAddress();
@@ -55,7 +58,7 @@ public class Computador {
         return ip;
     }
 
-    public String getNomeMaquina(){
+    public String getNomeMaquina() {
         String nomeMaquina = null;
         try {
             nomeMaquina = InetAddress.getLocalHost().getHostName();
@@ -66,24 +69,20 @@ public class Computador {
         return nomeMaquina;
     }
 
-    public void registerMachine(Integer fkFuncionario){
+    public void registerMachine(Integer fkFuncionario) {
         Looca sistema = new Looca();
 
-        String so               = sistema.getSistema().getSistemaOperacional();
-        String fabricante       = sistema.getSistema().getFabricante();
-        String nomeComputador   = getNomeMaquina();
-        String ipComputador     = getIpMaquina();
-        Integer idFuncionario   = fkFuncionario;
+        String so = sistema.getSistema().getSistemaOperacional();
+        String fabricante = sistema.getSistema().getFabricante();
+        String nomeComputador = getNomeMaquina();
+        String ipComputador = getIpMaquina();
+        Integer idFuncionario = fkFuncionario;
 
         Computador computador = new Computador(
-            nomeComputador, fabricante, so, idFuncionario, ipComputador
+                nomeComputador, fabricante, so, idFuncionario, ipComputador
         );
         computadorDao.insert(computador);
     }
-
-
-
-
 
 
     public Integer getIdComputadores() {
