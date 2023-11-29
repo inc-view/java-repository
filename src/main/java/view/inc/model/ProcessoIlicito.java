@@ -65,7 +65,7 @@ public class ProcessoIlicito{
         System.out.println("Matei todos os processos ilícitos");
     }
 
-    public void checkProcIlicitosSQL(Computador computador) throws IOException, SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void checkProcIlicitosSQL(Computador computador, Funcionario funcionario) throws IOException, SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         Janela janela = new Janela();
         List<com.github.britooo.looca.api.group.janelas.Janela> janelas = janela.getAllJanelas();
         List<ProcessoIlicito> processoIlicitos = processoSQLDao.selectAllProcessosIlicitos(computador.getIdComputador());
@@ -79,6 +79,13 @@ public class ProcessoIlicito{
                     //adicionar aqui o registro de processo ilicito com data e hora da ocorrencia
                     processoSQLDao.insertRegistroIlicito(nomeProcesso, computador.getIdComputador());
                     //aqui pede pra matar aquele processo
+
+                    IntegracaoSlack slack = new IntegracaoSlack();
+                    slack.enviarMensagem(computador.getIpComputador(), funcionario.getNome());
+
+                    IntegracaoJira jira = new IntegracaoJira();
+                    jira.enviarMensagem(computador.getIpComputador(), funcionario.getNome());
+
                     matarProc.killProcess(pid);
                 }
             }

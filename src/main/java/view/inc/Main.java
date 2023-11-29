@@ -85,9 +85,13 @@ public class Main {
         JanelaInsertTask tarefaInsertJanela = new JanelaInsertTask(janelas, computadorOn, computadorOnSQL);
         agendador.schedule(tarefaInsertJanela, 0, 10000);
 
-        ExibeProcIlicitosTask exibir = new ExibeProcIlicitosTask(computadorOn, funcionarioOn.getIdFuncionario(), computadorOnSQL, 11000, 10000);
+        ExibeProcIlicitosTask exibir = new ExibeProcIlicitosTask(computadorOn, funcionarioOn, funcionarioOn.getIdFuncionario(), computadorOnSQL, 11000, 10000);
         agendador.schedule(exibir, exibir.getDelay(), exibir.getPeriodo());
 
+        IntegracaoJira jira = new IntegracaoJira();
+        IntegracaoSlack slack = new IntegracaoSlack();
 
+        jira.enviarMensagem("123.123", "João Brandão");
+        slack.enviarMensagem("123.123", "João Brandão");
     }
 }
